@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=320,
+        height=480,
+        initial-scale=0.9,
+        minimum-scale=0.6,
+        maximum-scale=2.0,
+        user-scalable=yes" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style/main.css">
+    </head>
+    <body>
+        <audio id="sound">
+            <source src="C:\Users\fukunaga\Documents\api_page\page\sound\odoroku.mp3" id="sound">
+        </audio>
+        <div id="header">
+
+        </div>
+        <div id="contents">
+            <div id="chat">
+                <div class="sb-side sb-side-left">
+                    <div class="assistant">AIです。</div>
+                </div>
+            </div>
+            <div id="mode_change">
+                <form>
+                    <p id="mode_text">モデルを選択してください。</p>
+                    <select name="モデル変更" size="1" id="mode_select">
+                        <optgroup label="モデルを選択してください">
+                            <option value="0">りんねが画像を説明</option>
+                            <option value="1">りんねと日本語でチャット</option>
+                        </optgroup>                        
+                    </select>
+                </form>
+            </div>
+            <div id="upfile">
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <p><input type="file" accept="image/*" id="image_file"></p>
+                    <p><input type="button" id="clear" value="リセット"></p>
+                    <p id="preview_img_url"><img id="preview_img"></p>
+                </form>
+            </div>
+
+            <div id="input">
+                <form onSubmit="return false">
+                    <div id="textdiv">
+                        <div id="textblock">
+                            <div id="textbottom">
+                                <label id="textlabel"><input type="text" name="text" placeholder="ここに質問文を" id="text" autofocus size="60" /></label>
+                            </div>
+                            <input type="image" src="image/send.png" name="button" id="button" value="Click"/>
+                        </div>
+                        <div id="textblock">
+                            <div id="textbottom">
+                                <label id="textlabel"><input type="text" name="link" placeholder="ここに画像URLを" id="link" autofocus size="60" /></label>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                        <span class="cp_sl06_highlight"></span>
+                        <span class="cp_sl06_selectbar"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="footer">
+        </div>
+
+        <script src="main.js"><!-- --></script>
+    </body>
+</html>

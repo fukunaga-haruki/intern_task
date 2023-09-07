@@ -1,0 +1,265 @@
+body {
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #abbfd6;
+  }
+
+#contents{
+    width: 800px;
+
+}
+
+
+#char{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 50%;
+    top: 73%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center
+}
+
+#char img{
+    object-fit: cover;
+}
+
+div#chat{
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+#chat{
+    height:80%;
+    width: 80%;
+    max-width:600px;
+    min-width:300px;
+    background-color: white;
+    border-radius: 8px;
+    padding:10px;
+    overflow:auto;
+}
+
+#textdiv{
+    border-radius: 5px;
+    border-width: 2px;
+    text-align: center;
+    background-color: white;
+    padding:5px;
+    padding-right: 40px;
+}
+
+#textblock{
+    display: flex;
+}
+
+#text{
+    font-size:large;
+    border: none;
+}
+#link{
+    border: none;
+}
+
+div#textbottom {
+	position: relative;
+	width: 80%;
+	margin: 2%;
+}
+
+div#textbottom input[type='textarea'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	/*padding: 0.3em;*/
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: black;
+	border: none;
+	border-bottom: 2px solid #1b2538;
+	background: transparent;
+}
+
+label#textlabel input[type='textarea']:focus {
+	border-bottom: 2px solid #da3c41;
+	
+}
+
+div#input{
+    position:absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+div#input input{
+    max-width:480px;
+}
+
+#input select{
+    margin-right:0;
+    margin-left:auto;
+    width: 100%;
+    display: block;
+    margin-bottom:3px;
+}
+
+#button{
+    position:absolute;
+    height:30px;
+    right:5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color:lightgrey;
+}
+
+#button:disabled {
+    opacity: 0.5;
+}
+
+.hogen{
+    color: green;
+}
+.hyojun{
+    color: blue;
+}
+
+.t1{
+   outline: none;
+}
+
+.t2{
+    color:darkgray;
+}
+
+div.assistant{
+    color: black;
+    background: white;
+}
+
+div.user{
+    color: black;
+    background: greenyellow;
+}
+
+#text::placeholder {
+    color: #212224;
+}
+#link::placeholder {
+    color: #616263;
+}
+
+/* 吹き出し */
+.sb-side {
+    position: relative;
+    float: left;
+    margin: 0 40px 30px 40px; /* 吹き出しの上下左右の余白 */
+    min-width: 50%;
+}
+.sb-side-right {
+    float: right;
+    min-width: 50%;
+}
+
+/* 吹き出し内のテキスト */
+div.user, div.assistant {
+    position: relative;
+    border: 3px solid gray; /* 吹き出しの縁取りの太さとカラー */
+    border-radius: 6px; /* 吹き出しを角丸に */
+    /*color: #333; /* 吹き出し内のテキストのカラー */
+    font-size: 15px; /* 吹き出し内のフォントサイズ */
+    line-height: 1.7; /* 吹き出し内のテキストが2行以上になった時の行間 */
+    padding: 18px; /* 吹き出し内の上下左右の余白 */
+}
+div.user > p:last-of-type , div.assistant > p:last-of-type {
+    padding-bottom: 0; /* 吹き出し内のテキストを改行した場合、最後のpタグにpadding-bottomをつけない */
+    margin-bottom: 0; /* 吹き出し内のテキストを改行した場合、最後のpタグにmargin-bottomをつけない */
+}
+
+/* 吹き出しの三角 */
+div.user:before ,  div.assistant:before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    top: 16px; /* 吹き出し内の三角の位置 */
+    z-index: 3;
+}
+div.user:after ,  div.assistant:after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    top: 14px; /* beforeより-1px */
+    z-index: 2; /* beforeより-1 */
+}
+
+/* 吹き出しの三角（左） */
+div.assistant:before {
+    left: -7px;
+    border-width: 7px 10px 7px 0;
+    border-color: transparent white transparent transparent; /* 背景色と同じカラーに */
+}
+div.assistant:after {
+    left: -11px; /* beforeより-4px */
+    border-width: 9px 10px 9px 0; /* beforeより上下+2px */
+    border-color: transparent gray transparent transparent; /* 縁取りと同じカラーに */
+}
+
+/* 吹き出しの三角（右） */
+div.user:before {
+    right: -7px;
+    border-width: 7px 0 7px 10px;
+    border-color: transparent transparent transparent greenyellow; /* 背景色と同じカラーに */
+}
+div.user:after {
+    right: -11px; /* beforeより-4px */
+    border-width: 9px 0 9px 10px; /* beforeより上下+2px */
+    border-color: transparent transparent transparent gray; /* 縁取りと同じカラーに */
+}
+
+@media screen and (max-width: 959px) {
+	#char img{
+        width:70%;
+        height:70%;
+    }
+
+}
+
+@media (max-width: 767px) {
+    /* 吹き出し内のテキスト */
+    div.user, div.assistant {
+      padding: 12px; /* 吹き出し内の上下左右の余白を-6px */
+    }
+  }
+
+/* プレビュー画像の設定 */
+#preview_img{
+    width: 350px;
+    height: auto;
+}
+
+/* モデル選択部分の設定 */
+div#mode_change{
+    max-width: 100%;
+    height: auto;
+    top: 1px;
+    left: 1px;
+}
+
+/* アップロードとかプレビューとか */
+div#upfile{
+    max-width: 100%;
+    height: auto;
+}
